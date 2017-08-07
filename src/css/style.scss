@@ -1,6 +1,23 @@
 $orange: #e67e22;
 $orange-link: #cf6d17;  
 
+@mixin transition($trans) {
+  -webkit-transition: $trans;
+     -moz-transition: $trans;
+      -ms-transition: $trans;
+       -o-transition: $trans;
+          transition: $trans;
+}
+
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
 /* --------------------------------- */
 /* Basic Setup*/
 /* --------------------------------- */
@@ -129,7 +146,7 @@ a:link, a:active {
     text-decoration: none;
     padding-bottom: 1px;
     border-bottom: 1px solid $orange;
-    transition: all 0.2s;
+    @include transition(all 0.2s);
 }
 
 a:hover, a:active {
@@ -145,8 +162,8 @@ input[type=submit] {
     padding: 10px 30px;
     font-weight: 300;
     text-decoration: none;
-    border-radius: 200px;
-    transition: all 0.5s;
+    @include border-radius(200px);
+    @include transition(all 0.2s);
 }
 
 
@@ -228,7 +245,7 @@ header {
             text-transform: uppercase;
             font-size: 90%;
             border-bottom: 2px solid transparent;
-            transition: all 0.5s;
+            @include transition(all 0.5s);
             
         }
         a:hover, a:active {
@@ -274,7 +291,7 @@ header {
         width: 100%;
         height: auto;
         transform: scale(1.15);
-        transition: all 0.5s;
+        @include transition(all 0.5s);
     }
     img:hover {
         opacity: 1;
@@ -315,7 +332,7 @@ header {
         color: $orange;
         border: 2px solid $orange;
         display: inline-block;
-        border-radius: 50%;
+        @include border-radius(50%);
         height: 55px;
         width: 55px;
         text-align: center;
@@ -393,7 +410,7 @@ cite {
     display: block;
     img {
         height: 50px;
-        border-radius: 50%;
+        @include border-radius(50%);
         margin-right: 10px;
         vertical-align: middle;
     }
@@ -409,7 +426,7 @@ cite {
 
 .plan-box {
     background-color: #fff;
-    border-radius: 5px;
+    @include border-radius(5px);
     width: 90%;
     margin-left: 5%;
     box-shadow: 0 2px 2px #efefef;
@@ -464,7 +481,7 @@ select,
 textarea {
     width: 100%;
     padding: 7px;
-    border-radius: 3px;
+    @include border-radius(3px);
     border: 1px solid #ccc;
 }
 
@@ -503,7 +520,7 @@ footer {
             text-decoration: none;
             border: 0;
             color: #888;
-            transition: all 0.2s;
+            @include transition(all 0.2s);
         }
         a:hover, a:active {
             color: #ddd;
@@ -524,7 +541,7 @@ footer {
             text-decoration: none;
             border: 0;
             color: #888;
-            transition: all 0.2s;
+            @include transition(all 0.2s);
             font-size: 160%;
         }
     }
@@ -537,7 +554,7 @@ footer {
 .ion-social-twitter,
 .ion-social-googleplus,
 .ion-social-instagram {
-    transition: all 0.2s;
+    @include transition(all 0.2s);
 }
 .ion-social-facebook:hover {
     color: #3b5998;
